@@ -1,18 +1,15 @@
-{
-  "name": "html-css",
-  "version": "1.0.0",
-  "description": "A template for HTML and CSS",
-  "main": "index.html",
+﻿{
+  "name": "nini-html-css",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
   "scripts": {
-    "start": "serve"
+    "build": "echo \"static site\""
   },
-  "keywords": [
-    "html",
-    "css"
-  ],
-  "author": "Ives van Hoorne",
-  "license": "MIT",
-  "devDependencies": {
-    "serve": "11.2.0"
+  "dependencies": {
+    "@netlify/functions": "^2.8.0",
+    "firebase-admin": "^12.5.0",
+    "sharp": "^0.33.3",
+    "yargs": "^17.7.2"
   }
 }
