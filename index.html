@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="vi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>NiNi Funny v50</title>
+    <link rel="icon" href="/assets/images/logo.png" />
+
+    <style>
+      :root {
+        --card: #ffffff;
+        --ink: #111;
+        --muted: #666;
+        --brand: #f24f7f;
+        /* ảnh nền — nếu cần đổi chỉ cần sửa dòng dưới */
+        --bg-image: url("/assets/images/bg/summer.png");
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        margin: 0;
+        color: var(--ink);
+        font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+          sans-serif;
+        background: #f3f4f6;
+      }
+
+      /* phủ ảnh nền toàn trang */
+      body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        background-image: var(--bg-image);
+        background-size: cover;
+        background-position: center;
+        filter: saturate(115%) contrast(105%);
+        opacity: 0.35;
+        pointer-events: none;
+      }
+
+      .card {
+        max-width: 980px;
+        width: 92%;
+        margin: 24px auto;
+        padding: 28px;
+        border-radius: 12px;
+        background: var(--card);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+      }
+
+      .topbar {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 8px;
+      }
+      .topbar img {
+        height: 32px;
+      }
+      .brand {
+        font-weight: 700;
+        font-size: 22px;
+      }
+
+      .hints {
+        font-size: 14px;
+        color: var(--muted);
+      }
+      .hints ul {
+        padding-left: 18px;
+        margin: 6px 0;
+      }
+
+      .btns {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 12px;
+        margin-top: 12px;
+      }
+      .btn {
+        display: inline-block;
+        text-decoration: none;
+        padding: 0.55rem 1rem;
+        border-radius: 10px;
+        background: #111;
+        color: #fff;
+        font-weight: 600;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.18);
+      }
+      .btn.ghost {
+        background: #fff;
+        color: #111;
+        border: 1px solid rgba(0, 0, 0, 0.1);
+      }
+      .btn.brand {
+        background: var(--brand);
+      }
+
+      footer {
+        margin-top: 18px;
+        font-size: 12px;
+        color: #555;
+      }
+      code {
+        background: rgba(0, 0, 0, 0.05);
+        padding: 0.15rem 0.4rem;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="card">
+      <header class="topbar">
+        <img src="/assets/images/logo.png" alt="NiNi logo" />
+        <div class="brand">NiNi Funny</div>
+      </header>
+
+      <section class="hints">
+        <p>
+          Trang tĩnh được phục vụ từ thư mục <code>public/</code>. API chạy dưới
+          <code>/.netlify/functions/*</code>.
+        </p>
+        <p>
+          <a href="/.netlify/functions/env-check"
+            >/.netlify/functions/env-check</a
+          >
+        </p>
+        <ul>
+          <li><b>Publish directory:</b> <code>public</code></li>
+          <li>
+            <b>Build command:</b> <code>npm run build</code> (hoặc chỉ
+            <code>echo</code> cho static)
+          </li>
+          <li><b>Functions dir:</b> <code>netlify/functions</code></li>
+        </ul>
+      </section>
+
+      <div class="btns">
+        <a class="btn brand" href="/home">Home</a>
+        <a class="btn ghost" href="/storybook">Storybook</a>
+        <a class="btn ghost" href="/games">Games</a>
+        <a class="btn ghost" href="/videos">Videos</a>
+        <a class="btn ghost" href="/shop">Shop</a>
+      </div>
+
+      <footer>
+        Ảnh nền đang dùng: <code>/assets/images/bg/summer.png</code>. Logo:
+        <code>/assets/images/logo.png</code>. Nếu xem trên môi trường khác mà
+        ảnh chưa hiện, thử đổi thành
+        <code>url("./assets/images/bg/summer.png")</code> trong biến
+        <code>--bg-image</code>.
+      </footer>
+    </main>
+
+    <!-- Firebase SDKs (browser) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script>
+      // THAY bằng cấu hình Web App của bạn (không dùng private key)
+      const firebaseConfig = {
+        apiKey: "AIzaSyBdaMS7aI03wHLhi1Md2QDitJFkA61IYUU",
+        authDomain: "nini-8f3d4.firebaseapp.com",
+        projectId: "nini-8f3d4",
+        storageBucket: "nini-8f3d4.firebasestorage.app",
+        appId: "1:991701821645:web:fb21c357562c6c801da184",
+      };
+      firebase.initializeApp(firebaseConfig);
+    </script>
+
+    <!-- Code front-end của bạn (gọi API, log activity, leaderboard…) -->
+    <script type="module" src="/js/main.js"></script>
+  </body>
+</html>

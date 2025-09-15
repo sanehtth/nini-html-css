@@ -1,0 +1,19 @@
+{
+  "code": "T_FARM",
+  "title_vi": "Nông Trại",
+  "title_en": "Farm",
+  "enabled": true,
+  "passport": {
+    "countryName": "Farm Land",
+    "stampOn": "",
+    "stampOff": ""
+  },
+  "treasure": {
+    "count": 4,
+    "spawnChance": 0.25,
+    "grandPrize": {
+      "type": "avatar",
+      "code": "avatar_farm"
+    }
+  }
+}

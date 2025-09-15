@@ -1,0 +1,24 @@
+
+.nini-actor {
+  --nini-x: 12%;
+  --nini-y: 72%;
+  --nini-walk-ms: 1200ms;
+  position: absolute;
+  width: min(16vw, 180px);
+  transform: translate(-50%, -100%);
+  transition: left var(--nini-walk-ms) linear, top var(--nini-walk-ms) linear;
+  filter: drop-shadow(0 6px 10px rgba(0,0,0,.35));
+}
+.nini-actor.flip .nini-img { transform: scaleX(-1); }
+.nini-img { width: 100%; height: auto; animation: nini-breath 2.6s ease-in-out infinite; }
+.nini-actor.idle .nini-img { animation: nini-breath 2.6s ease-in-out infinite; }
+.nini-actor.walk .nini-img { animation: nini-bounce 320ms ease-in-out infinite; }
+.nini-actor.talk .nini-img { animation: nini-talk 400ms ease-in-out infinite; }
+.nini-actor.point .nini-img { animation: nini-point 900ms ease-in-out infinite; transform-origin: 70% 40%; }
+.nini-actor.celebrate .nini-img { animation: nini-celebrate 700ms ease-in-out infinite; }
+.nini-shadow { position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%); width: 46%; height: 10px; background: radial-gradient(ellipse at center, rgba(0,0,0,.35), rgba(0,0,0,0)); filter: blur(2px); opacity: .9; }
+@keyframes nini-breath { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-2.3%) } }
+@keyframes nini-bounce { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-6%) } }
+@keyframes nini-talk { 0%, 100% { transform: translateY(0) } 50% { transform: translateY(-3.5%) } }
+@keyframes nini-point { 0%, 100% { transform: rotate(0deg) } 50% { transform: rotate(-6deg) } }
+@keyframes nini-celebrate { 0%, 100% { transform: rotate(0deg) translateY(0) } 25% { transform: rotate(-6deg) translateY(-4%) } 75% { transform: rotate(6deg) translateY(-4%) } }

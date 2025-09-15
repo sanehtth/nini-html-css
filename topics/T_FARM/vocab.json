@@ -1,0 +1,20 @@
+[
+  {
+    "id": "cow",
+    "vi": "bò",
+    "en": "cow",
+    "sound_en": ""
+  },
+  {
+    "id": "chicken",
+    "vi": "gà",
+    "en": "chicken",
+    "sound_en": ""
+  },
+  {
+    "id": "carrot",
+    "vi": "cà rốt",
+    "en": "carrot",
+    "sound_en": ""
+  }
+]

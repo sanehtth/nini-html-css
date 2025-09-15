@@ -1,0 +1,38 @@
+{
+  "scenes": [
+    {
+      "id": "S_FARM_01",
+      "title": "Vườn nhà & đàn gà",
+      "image": "farm_01.png",
+      "hotspots": [
+        {
+          "targetId": "cow",
+          "shape": "circle",
+          "c": [
+            0.52,
+            0.63,
+            0.08
+          ]
+        },
+        {
+          "targetId": "chicken",
+          "shape": "circle",
+          "c": [
+            0.38,
+            0.7,
+            0.06
+          ]
+        },
+        {
+          "targetId": "carrot",
+          "shape": "circle",
+          "c": [
+            0.66,
+            0.58,
+            0.06
+          ]
+        }
+      ]
+    }
+  ]
+}
